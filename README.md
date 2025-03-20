@@ -1,5 +1,5 @@
 # Tutorial - Deploy Mistral-Small-3.1-24B-Instruct using Inferless
-[Qwen2.5-VL-7B-Instruct](https://huggingface.co/qwen/Qwen2.5-VL-7B-Instruct) is a state‑of‑the‑art, 7B vision‑language model from Alibaba Cloud’s Qwen team. Built for instruction‑tuned applications, it seamlessly fuses robust language understanding with advanced visual analysis. Whether it’s recognizing complex scenes, parsing detailed documents, or even comprehending long videos by pinpointing key moments, this model is engineered to act as a versatile visual agent. With capabilities that include generating structured outputs (like bounding boxes and JSON) and supporting multilingual text within images, it opens up new possibilities for interactive chatbots, multimedia content analysis, and more.
+​Mistral-Small-3.1-24B-Instruct is an advanced multimodal language model developed by Mistral AI, featuring 24 billion parameters. Building upon its predecessor, Mistral Small 3, this model introduces enhanced text performance, robust vision capabilities, and an expanded context window of up to 128,000 tokens. It excels in various tasks, including image analysis, programming, mathematical reasoning, and supports over two dozen languages. 
 
 ## TL;DR:
 - Deployment of  model using [transformers](https://github.com/huggingface/transformers/).
