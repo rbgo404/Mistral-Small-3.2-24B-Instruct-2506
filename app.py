@@ -48,7 +48,7 @@ class InferlessPythonModel:
                             "content": request.prompt
                         },
                     ]
-        tokenized_chat = tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True, return_tensors="pt")
+        tokenized_chat = self.tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True, return_tensors="pt")
         with torch.no_grad():
             generation = self.model.generate(
                 tokenized_chat,
