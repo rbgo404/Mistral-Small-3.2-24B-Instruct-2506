@@ -1,0 +1,9 @@
+build:
+  cuda_version: "12.1.1"
+  python_packages:
+    - "git+https://github.com/huggingface/transformers@v4.49.0-Mistral-3"
+    - "bitsandbytes==0.45.3"
+    - "hf_transfer==0.1.9"
+    - "inferless==0.2.14"
+    - "pydantic==2.10.6"
+    - "accelerate==1.5.2"
