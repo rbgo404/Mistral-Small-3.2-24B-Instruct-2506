@@ -26,7 +26,7 @@ class ResponseObjects(BaseModel):
 class InferlessPythonModel:
     def initialize(self):
         model_id = "mistralai/Mistral-Small-3.1-24B-Instruct-2503"
-        snapshot_download(repo_id=model_id)
+        snapshot_download(repo_id=model_id, allow_patterns=["*.safetensors"])
         quantization_config = BitsAndBytesConfig(load_in_4bit=True)
         
         self.tokenizer = AutoTokenizer.from_pretrained(model_id, trust_remote_code=True)
