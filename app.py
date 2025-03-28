@@ -40,10 +40,13 @@ class InferlessPythonModel:
         )
 
     def infer(self, request: RequestObjects) -> ResponseObjects:
+        system_prompt = "You are a conversational agent that always answers straight to the point."
+        if request.system_prompt is not None:
+            system_prompt = request.system_prompt
         messages = [
                         {
                             "role": "system",
-                            "content": request.system_prompt
+                            "content": system_prompt
                         },
                         {
                             "role": "user",
