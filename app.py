@@ -11,13 +11,13 @@ from transformers import AutoTokenizer, Mistral3ForConditionalGeneration, BitsAn
 @inferless.request
 class RequestObjects(BaseModel):
     prompt: str = Field(default="Give me 5 non-formal ways to say 'See you later' in French.")
-    system_prompt: Optional[str] = "You are a conversational agent that always answers straight to the point."
-    temperature: Optional[float] = 0.7
-    top_p: Optional[float] = 0.1
-    repetition_penalty: Optional[float] = 1.18
-    top_k: Optional[int] = 40
-    max_tokens: Optional[int] = 100
-    do_sample: Optional[bool] = False
+    system_prompt: str = Field(default="You are a conversational agent that always answers straight to the point.")
+    temperature: float = Field(default=0.7)
+    top_p: float = Field(default=0.1)
+    repetition_penalty: float = Field(default=1.18)
+    top_k: int = Field(default=40)
+    max_tokens: int= Field(default=100)
+    do_sample: bool = Field(default=False)
 
 @inferless.response
 class ResponseObjects(BaseModel):
@@ -40,13 +40,10 @@ class InferlessPythonModel:
         )
 
     def infer(self, request: RequestObjects) -> ResponseObjects:
-        system_prompt = "You are a conversational agent that always answers straight to the point."
-        if request.get("system_prompt") is not None:
-            system_prompt = request.system_prompt
         messages = [
                         {
                             "role": "system",
-                            "content": system_prompt
+                            "content": request.system_prompt
                         },
                         {
                             "role": "user",
