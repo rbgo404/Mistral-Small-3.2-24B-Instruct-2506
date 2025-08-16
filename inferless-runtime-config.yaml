@@ -8,3 +8,5 @@ build:
     - "inferless==0.2.15"
     - "pydantic==2.11.7"
     - "accelerate==1.10.0"
+    - "torch==2.7.0"
+    - "torchvision==0.22.0"
