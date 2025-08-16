@@ -44,7 +44,7 @@ class InferlessPythonModel:
         model_id = "mistralai/Mistral-Small-3.2-24B-Instruct-2506"
         self.SYSTEM_PROMPT = self.load_system_prompt(model_id, "SYSTEM_PROMPT.txt")       
         self.tokenizer = MistralTokenizer.from_hf_hub(model_id)
-        self.model = Mistral3ForConditionalGeneration.from_pretrained(model_id, torch_dtype=torch.bfloat16)
+        self.model = Mistral3ForConditionalGeneration.from_pretrained(model_id, torch_dtype=torch.bfloat16,device_map="cuda")
 
     def infer(self, inputs: RequestObjects) -> ResponseObjects:       
         user_message = [
